@@ -1,0 +1,18 @@
+export class ChatUI {
+    constructor(list) {
+        this.list = list;
+    }
+    render(data) {
+        const when = dateFns.formatDistanceToNow(
+            data.created_at.toDate(),
+            { addSuffix: true }
+        );
+        const html = `
+            <span class="username">${data.username}</span> 
+            <span class="message">${data.message}</span>
+            <div class="time">${when}</div>
+        `;
+        // this.list.innerHTML += html;
+        this.list.insertAdjacentHTML('beforeend', html);
+    }
+}
