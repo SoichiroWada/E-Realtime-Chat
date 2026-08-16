@@ -8,9 +8,11 @@ export class ChatUI {
             { addSuffix: true }
         );
         const html = `
-            <span class="username">${data.username}</span> 
-            <span class="message">${data.message}</span>
-            <div class="time">${when}</div>
+            <li class="list-group-item">
+                <span class="username">${data.username}:</span>
+                <span class="message">${data.message}</span>
+                <div class="time">${when}</div>
+            </li>
         `;
         // this.list.innerHTML += html;
         this.list.insertAdjacentHTML('beforeend', html);
