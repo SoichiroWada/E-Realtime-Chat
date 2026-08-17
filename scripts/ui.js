@@ -2,6 +2,9 @@ export class ChatUI {
     constructor(list) {
         this.list = list;
     }
+    clear(){
+        this.list.innerHTML = '';
+    }
     render(data) {
         const when = dateFns.formatDistanceToNow(
             data.created_at.toDate(),

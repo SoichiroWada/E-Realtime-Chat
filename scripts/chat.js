@@ -7,7 +7,7 @@ export class Chatroom {
         this.room = room;
         this.username = username;
         this.chats = collection(db, 'chats');
-        this.unsubscribe= null;
+        this.unsubscribe = null;
     }
     async addChat(message) {
         const chat = {
@@ -38,6 +38,7 @@ export class Chatroom {
     }
     updateName(username) {
         this.username = username;
+        localStorage.setItem('username:', username);
     }
     updateRoom(room) {
         this.room = room;
