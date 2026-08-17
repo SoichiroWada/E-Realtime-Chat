@@ -3,7 +3,7 @@
 }
 
 .btn {
-  background: turquoise;
+  background: rgb(24, 201, 183);
   color: white;
   outline: none !important;
   box-shadow: none !important;
@@ -28,6 +28,12 @@
 }
 
 .chat-rooms .btn.active {
-    background: rgb(24, 102, 47);
-    color: white;
+  background: rgb(36, 85, 190);
+  color: white;
+}
+
+.chat-rooms .btn:hover {
+  background: white;
+  color: #123d7e;
+  border-color: transparent;
 }
