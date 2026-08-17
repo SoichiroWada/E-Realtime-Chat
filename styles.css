@@ -3,7 +3,7 @@
 }
 
 .btn {
-  background: #43d9be;
+  background: turquoise;
   color: white;
   outline: none !important;
   box-shadow: none !important;
@@ -25,4 +25,9 @@
 .update-mssg {
   text-align: center;
   margin: 20px auto;
+}
+
+.chat-rooms .btn.active {
+    background: rgb(24, 102, 47);
+    color: white;
 }

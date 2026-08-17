@@ -32,6 +32,16 @@ newNameForm.addEventListener('submit', e => {
 //update the chat room
 rooms.addEventListener('click', e => {
     if(e.target.tagName === 'BUTTON'){
+        // 全ボタンから active を外す
+        const buttons = rooms.querySelectorAll('button');
+
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // クリックしたボタンだけ active にする
+        e.target.classList.add('active');
+
         chatUI.clear();
         chatroom.updateRoom(e.target.getAttribute('id'));
         chatroom.getChats(chat => chatUI.render(chat));
