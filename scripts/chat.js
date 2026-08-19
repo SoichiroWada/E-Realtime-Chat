@@ -1,6 +1,5 @@
 import { app, analytics, db } from "./afirebase-init.js";
-import { getFirestore, collection, addDoc, deleteDoc, getDocs, doc, Timestamp, onSnapshot, query, where, orderBy }
-from "./afirebase-init.js";
+import { getFirestore, collection, addDoc, deleteDoc, getDocs, doc, Timestamp, onSnapshot, query, where, orderBy } from "./afirebase-init.js";
 
 export class Chatroom {
     constructor(room, username) {
@@ -31,10 +30,17 @@ export class Chatroom {
         this.unsubscribe = onSnapshot(queryParameter, snapshot => {
             snapshot.docChanges().forEach(change => {
                 if (change.type === 'added') {
-                    callback(change.doc.data());
+                    callback({
+                        id: change.doc.id,
+                        ...change.doc.data()
+                    });
                 }
             });
         });
+    }
+    async deleteChat(id) {
+        const docRef = doc(db, 'chats', id);
+        await deleteDoc(docRef);
     }
     updateName(username) {
         this.username = username;

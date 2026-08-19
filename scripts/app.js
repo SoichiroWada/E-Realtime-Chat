@@ -31,7 +31,7 @@ newNameForm.addEventListener('submit', e => {
 
 //update the chat room
 rooms.addEventListener('click', e => {
-    if(e.target.tagName === 'BUTTON'){
+    if (e.target.tagName === 'BUTTON') {
         // 全ボタンから active を外す
         const buttons = rooms.querySelectorAll('button');
 
@@ -46,7 +46,18 @@ rooms.addEventListener('click', e => {
         chatroom.updateRoom(e.target.getAttribute('id'));
         chatroom.getChats(chat => chatUI.render(chat));
     }
-})
+});
+
+chatList.addEventListener('click', e => {
+    if (e.target.classList.contains('delete')) {
+        const li = e.target.closest('li');
+        const id = li.dataset.id;
+
+        chatroom.deleteChat(id)
+            .then(() => li.remove())
+            .catch(err => console.log(err));
+    }
+});
 
 //check local storage for a name
 const username = localStorage.username ? localStorage.username : 'unknown';
