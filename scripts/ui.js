@@ -11,11 +11,14 @@ export class ChatUI {
             { addSuffix: true }
         );
         const html = `
-        <li class="list-group-item" data-id="${data.id}">
-                <span class="username">${data.username}:</span>
-                <span class="message">${data.message}</span>
-                <button class="btn btn-sm delete">Delete</button>
-                <div class="time">${when}</div>
+            <li class="list-group-item d-flex justify-content-between align-items-start" data-id="${data.id}">
+                <div>
+                    <span class="username">${data.username}:</span>
+                    <span class="message">${data.message}</span>
+                    <div class="time">${when}</div>
+                </div>
+
+                <button class="delete-btn" type="button">&times;</button>
             </li>
         `;
         // this.list.innerHTML += html;

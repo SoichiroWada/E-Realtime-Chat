@@ -28,7 +28,7 @@
 }
 
 .chat-rooms .btn.active {
-  background: rgb(36, 85, 190);
+  background: rgb(18, 80, 10);
   color: white;
 }
 
@@ -36,4 +36,18 @@
   background: white;
   color: #123d7e;
   border-color: transparent;
+}
+
+.delete-btn {
+    border: none;
+    background: transparent;
+    color: #999;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.delete-btn:hover {
+    color: #555;
 }

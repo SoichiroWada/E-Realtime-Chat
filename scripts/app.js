@@ -49,7 +49,7 @@ rooms.addEventListener('click', e => {
 });
 
 chatList.addEventListener('click', e => {
-    if (e.target.classList.contains('delete')) {
+    if (e.target.classList.contains('delete-btn')) {
         const li = e.target.closest('li');
         const id = li.dataset.id;
 
